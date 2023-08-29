@@ -9,7 +9,7 @@ export class PresupuestoService {
   gastos: Gasto[]=[];
 
   constructor() { }
-
+  
   public agregarGasto(monto: number, gasto: string){
     this.gastos.push({monto,gasto});
   }
@@ -17,4 +17,5 @@ export class PresupuestoService {
   public mostrarGastos() {
     return this.gastos;
   }
+
 }

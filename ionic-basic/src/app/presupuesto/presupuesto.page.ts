@@ -8,19 +8,19 @@ import { PresupuestoService } from '../service/presupuesto.service';
   styleUrls: ['./presupuesto.page.scss'],
 })
 export class PresupuestoPage implements OnInit {
+
   public gastos: string[]=['Directos','Fijos', 'Variables'];
   public selectedValue: any;
-  public monto: number = 0;
-  public resultados: string ='';
+  public monto: number =0;
+  public resultados: string = '';
   public errResultados: string='light';
   public gastosList:Gasto[]=[];
 
-  constructor(private presupuestoService :PresupuestoService) { }
+  constructor(private presupuestoService : PresupuestoService) { }
 
   ngOnInit() {
     this.gastosList = this.presupuestoService.mostrarGastos();
   }
-
   customPopoverOptions: any = {
     header: 'Seleccion de gastos',
     subHeader: 'Seleccione el tipo de gasto',
@@ -28,7 +28,7 @@ export class PresupuestoPage implements OnInit {
   };
 
   cambioValor(value: any){
-    //console.log(value);
+    console.log(value);
   }
   guardar(){
     this.resultados ="";
@@ -49,4 +49,5 @@ export class PresupuestoPage implements OnInit {
     this.monto =0;
     this.selectedValue =null;
   }
+
 }
